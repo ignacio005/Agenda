@@ -1,6 +1,8 @@
 package interfaz;
 import dominio.*;
 import java.util.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class Interfaz {
 	
@@ -102,6 +104,21 @@ public class Interfaz {
 		String cadena=sc.nextLine();
 		return cadena;
 		
+	}
+	
+	public static void crearHojaCalculo(Libreta l) {
+		
+		try (FileWriter writer = new FileWriter("datos.csv")) {
+			
+			for(int i=0; i<l.getLista().size(); i++) {
+				writer.write(l.getLista() + "\n");
+			
+		}
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 	}
 
 }

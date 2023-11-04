@@ -12,6 +12,7 @@ public class Principal {
 		do {
 			p=Interfaz.leerPeticion();
 			seguir=Interfaz.procesarPeticion(p, libreta);
+			Interfaz.crearHojaCalculo(libreta);
 		}
 		while(seguir);
 
